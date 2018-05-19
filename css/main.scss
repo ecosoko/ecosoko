@@ -2,18 +2,55 @@
 ---
 
 @import 'normalize';
-html, body{
+
+/* particle css */
+
+html, body {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-.container{
+
+.container {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   background-color: #000000;
 }
-// css goes here 
+
+/* main */
+
+a {
+  color: #ff0000;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  top: 3rem;
+  text-align: center;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+
+  h1 {
+    font-size: 4rem;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    font-size: 2rem;
+  }
+}

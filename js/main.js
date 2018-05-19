@@ -1,7 +1,7 @@
 var RENDERER = {
 	BASE_PARTICLE_COUNT : 50,
 	WATCH_INTERVAL : 100,
-	
+
 	init : function(){
 		this.setParameters();
 		this.reconstructMethods();
@@ -52,10 +52,10 @@ var RENDERER = {
 		var width = this.$window.width(),
 			height = this.$window.height(),
 			stopped = (width == this.tmpWidth && height == this.tmpHeight);
-			
+
 		this.tmpWidth = width;
 		this.tmpHeight = height;
-		
+
 		if(stopped){
 			this.setup();
 		}
@@ -67,7 +67,7 @@ var RENDERER = {
 	},
 	controlForce : function(on, event){
 		this.gravity.on = on;
-		
+
 		if(!on){
 			return;
 		}
@@ -77,16 +77,16 @@ var RENDERER = {
 	},
 	render : function(){
 		requestAnimationFrame(this.render);
-		
+
 		var context = this.context;
 		context.save();
 		context.fillStyle = 'hsla(0, 0%, 0%, 0.3)';
 		context.fillRect(0, 0, this.width, this.height);
 		context.globalCompositeOperation = 'lighter';
-		
+
 		for(var i = 0, particles = this.particles, gravity = this.gravity, count = particles.length; i < count; i++){
 			var particle = particles[i];
-			
+
 			for(var j = i + 1; j < count; j++){
 				particle.checkForce(context, particles[j]);
 			}
@@ -105,7 +105,7 @@ PARTICLE.prototype = {
 	SPRING_AMOUNT : 0.001,
 	LIMIT_RATE : 0.2,
 	GRAVIY_MAGINIFICATION : 10,
-	
+
 	init : function(){
 		this.radius = this.getRandomValue(5, 15);
 		this.x = this.getRandomValue(-this.renderer.width * this.LIMIT_RATE, this.renderer.width * (1 + this.LIMIT_RATE)) | 0;
@@ -133,14 +133,14 @@ PARTICLE.prototype = {
 			dy = particle.y - this.y,
 			distance = Math.sqrt(dx * dx + dy * dy),
 			magnification = (particle.gravity ? this.GRAVIY_MAGINIFICATION : 1);
-			
+
 		if(distance > this.THRESHOLD * magnification){
 			return;
 		}
 		var rate = this.SPRING_AMOUNT / magnification / (this.radius + particle.radius);
 		this.ax = dx * rate * particle.radius;
 		this.ay = dy * rate * particle.radius;
-		
+
 		if(!particle.gravity){
 			particle.ax = -dx * rate * this.radius;
 			particle.ay = -dy * rate * this.radius;
@@ -165,18 +165,18 @@ PARTICLE.prototype = {
 		context.arc(0, 0, this.radius, 0, Math.PI * 2, false);
 		context.fill();
 		context.restore();
-		
+
 		this.x += this.vx;
 		this.y += this.vy;
 		this.vx += this.ax;
 		this.vy += this.ay;
-		
+
 		if(this.x < -this.radius && this.vx < 0 || (this.x > this.renderer.width + this.radius) && this.vx > 0 || this.y < -this.radius && this.vy < 0 || (this.y > this.renderer.height + this.radius) && this.vy > 0){
 			var theta = this.getRandomValue(0, Math.PI * 2),
 				sin = Math.sin(theta),
 				cos = Math.cos(theta),
 				velocity = this.getRandomValue(-3, 3);
-				
+
 			this.x = -(this.renderer.distance + this.radius) * cos + this.renderer.width / 2;
 			this.y = -(this.renderer.distance + this.radius) * sin + this.renderer.height / 2;
 			this.vx = velocity * cos;
