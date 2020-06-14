@@ -7,16 +7,15 @@
   <title>Ecosoko</title>
 
   <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="stylesheet" href="/css/main.css?{{ site.time | date: '%s' }}" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css?{{site.time | date: '%s'}}" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap">
 </head>
 <body>
-  <div class="content">
-    {{ content }}
+  <div class="wrapper">
+    {{content}}
   </div>
-  <div id="jsi-particle-container" class="container"></div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="/js/main.js?{{ site.time | date: '%s' }}"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/js/main.js?{{site.time | date: '%s'}}"></script>
 </body>
 </html>
