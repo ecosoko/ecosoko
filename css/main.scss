@@ -54,7 +54,9 @@ a:hover {
 
 /* layout */
 
-.wrapper {}
+.wrapper {
+
+}
 
 /* header */
 header {
@@ -78,6 +80,7 @@ header img {
   padding: 0;
   overflow: hidden;
   text-align: center;
+  border-bottom: 3px solid #000;
 }
 
 .quote-menu li {
