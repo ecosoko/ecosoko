@@ -106,7 +106,8 @@ header img {
 
 .quote-images {
   float: left;
-  width: 50%
+  width: 50%;
+  overflow: hidden;
   background: url(../img/Marley.jpg) no-repeat center;
 	background-size: 50%;
 
