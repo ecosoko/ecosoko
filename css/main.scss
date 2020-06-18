@@ -47,7 +47,23 @@ a:hover {
 }
 
 /* buttons */
+button {
+  font-family: 'Cormorant Garamond', "Helvetica Neue", Helvetica, arial, sans-serif;
+  background-color: #ede8ba;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 22px;
+  padding: 16px;
+}
 
+button:focus {
+  background-color: #bdb994;
+  border: none;
+  border-radius: 8px;
+  color: black;
+  outline: 0;
+}
 /* forms */
 
 /* tables */
@@ -66,11 +82,13 @@ header img {
 	margin: 0 auto;
 	display: block;
 	margin-top: 15px;
+  margin-bottom: 50px;
 }
 
 /* content */
 .quote {
   text-align: center;
+  margin-bottom: 100px;
 }
 
 .quote-menu ul {
@@ -126,6 +144,10 @@ header img {
 .contact {
 	text-align:center;
   padding-bottom: 30px;
+}
+
+.contact h1{
+  margin: 0;
 }
 
 .email {
