@@ -101,14 +101,20 @@ header img {
   border: 3px solid #000;
   margin: auto;
   width: 60%;
-  height: 350px;
+  height: 250px;
   padding: 15px;
 }
 
 .quote-images {
   width: 50%;
+  height: inherit;
   overflow: hidden;
-  margin: auto;
+}
+
+.quote-images img {
+  height: inherit;
+  width: 100%;
+  object-fit: fill;
 }
 
 .quote-text {
