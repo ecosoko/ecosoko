@@ -123,8 +123,24 @@ header img {
   padding: 15px;
 }
 
+.dogg {
+  display: none; /* This is what needs to change in JS */
+}
+
+.scott {
+  display: none; /* This is what needs to change in JS */
+}
+
 .marley {
-  display: none;
+  display: inherit; /* This is what needs to change in JS */
+}
+
+.camus {
+  display: none; /* This is what needs to change in JS */
+}
+
+.cole {
+  display: none; /* This is what needs to change in JS */
 }
 
 .quote-images {
