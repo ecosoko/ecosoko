@@ -123,16 +123,20 @@ header img {
   padding: 15px;
 }
 
+.marley {
+  display: none;
+}
+
 .quote-images {
-  width: 50%;
+  width: 60%;
   height: inherit;
   overflow: hidden;
 }
 
 .quote-images img {
-  height: inherit;
+  height: 100%;
   width: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .quote-text {
