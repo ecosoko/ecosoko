@@ -128,7 +128,7 @@ header img {
 }
 
 .scott {
-  display: inherit; /* This is what needs to change in JS */
+  display: none; /* This is what needs to change in JS */
 }
 
 .marley {
@@ -136,7 +136,7 @@ header img {
 }
 
 .camus {
-  display: none; /* This is what needs to change in JS */
+  display: inherit; /* This is what needs to change in JS */
 }
 
 .cole {
